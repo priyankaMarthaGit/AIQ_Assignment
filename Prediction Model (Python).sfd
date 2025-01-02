@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<ScriptFunctionDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Version Major="1" Minor="0" />
+  <Name>Prediction Model (Python)</Name>
+  <Script>import pandas as pd
+from sklearn.linear_model import LinearRegression
+
+# Input data
+input_data = pd.DataFrame(data)
+
+# Model
+X = input_data[['new_confirmed']]
+Y = input_data[['cumulative_confirmed']]
+model = LinearRegression().fit(X, Y)
+input_data['prediction'] = model.predict(X)
+output_table = input_data</Script>
+  <Language>Python</Language>
+  <Description />
+  <ApprovalStamp>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgyhZ0etOjEGKgAtLz3YyDAAAAAACAAAAAAAQZgAAAAEAACAAAABDLzdIKvFCWCNhhd7/BVHpmpO8i6ndenEJj+xeUEk/EwAAAAAOgAAAAAIAACAAAABRaGnW9y3Mjbc4ydyUf8gJ9YN0gfGadhKmg9zKXwYiTJAAAAANZitFlAgSRFGbBYlKF9uc3jHuadISyvu9+i9aGTkRCZOQJdy8M6xY7O+QSstnuyNrbSdL+840EJ8eh1RxesWlBy24OKhnlBaFRAt07MRN5WuUsZH/g8TspKlIihl5l6YHnHNyneExcoNyTP0HQ0kxE4VUvif19VRzlF97PNt4q/gTTStx9SJDOD3Ud536gW9AAAAAELDVt1lLQzJ3N/qiiM3o2gqL8fD2pCRuIxmPatQ0dlD9e1RZyFBHUCrOWdGKv7GgA2/PB4GiqXPV2wsgkbogCw==</ApprovalStamp>
+  <AdditionalApprovalStamps />
+  <Category>default</Category>
+</ScriptFunctionDefinition>
